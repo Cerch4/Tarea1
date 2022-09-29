@@ -1,7 +1,5 @@
-
 package tarea.pkg1;
 import java.util.Date;
-import java.util.ArrayList;
 public class Pago {
     private float monto;
     private Date fecha;
@@ -9,18 +7,10 @@ public class Pago {
         this.monto = monto;
         fecha = new Date(year,month,day);
     }
-    public void setmonto(float monto){
-        this.monto = monto;
-    }
-    public float getmonto(){
-        return monto;
-    }    
-    public void setfecha(int year, int month, int day){
-        fecha = new Date(year,month,day);
-    }
-    public Date getfecha(){
-        return fecha;
-    }
+    public void setmonto(float monto){this.monto = monto;}
+    public float getmonto(){return monto;}    
+    public void setfecha(int year, int month, int day){fecha = new Date(year,month,day);}
+    public Date getfecha(){return fecha;}
 }
 
 class Efectivo extends Pago{
@@ -40,6 +30,10 @@ class Transferencia extends Pago{
         this.banco = banco;
         this.numCuenta = numCuenta;
     }
+    public String getbanco(){return banco;}
+    public String getnumCuenta(){return numCuenta;}
+    public void setbanco(String banco){this.banco=banco;}
+    public void setnumCuenta(String numCuenta){this.numCuenta=numCuenta;}
 }
 
 class Tarjeta extends Pago{
@@ -50,4 +44,8 @@ class Tarjeta extends Pago{
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
+    public String gettipo(){return tipo;}    
+    public String getnumTransaccion(){return numTransaccion;}
+    public void setipo(String tipo){this.tipo=tipo;}
+    public void setnumTransaccion(String numTransaccion){this.numTransaccion=numTransaccion;}
 }
