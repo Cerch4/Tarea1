@@ -1,0 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tarea.pkg1;
+
+/**
+ *
+ * @author Cesar
+ */
+public class DetalleOrden{
+    private int cantidad;
+    private Articulo Art;
+    public DetalleOrden(int k, Articulo A1){
+        cantidad = K;
+        Art = A1;
+    }
+    public float calcPrecio(){
+     return(Art.precio*cantidad);   
+    }
+}
