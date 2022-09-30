@@ -73,4 +73,14 @@ public class OrdenCompra {
      public void setEstado(String sta){
          estado = sta;
      }
+     public String toString(){
+         String tos = null;
+         tos = "Fecha: " + fecha.toString() + "Estado: " + estado;
+         DetalleOrden aux = null;
+         for(int i = 0; i < varl.size(); i = i +1){
+           aux = varl.get(i);
+           tos = tos + aux.toString();
+       } 
+         return(tos);
+     }
 }
