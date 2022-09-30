@@ -14,7 +14,13 @@ public class Tarea1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Articulo test = new Articulo(27, "Cerbeza Stones", "Cerbeza que no da asco", 250);
+        String test2 = test.toString();
+        System.out.print(test);
+        
+        DetalleOrden OrdenTest = new DetalleOrden(7, test);
+        String testDetalle = OrdenTest.toString();
+        System.out.print(testDetalle);
     }
     
 }

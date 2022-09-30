@@ -12,29 +12,40 @@ public class DetalleOrden{
     private int cantidad;
     private Articulo Art;
     public DetalleOrden(int k, Articulo A1){
-        cantidad = K;
+        cantidad = k;
         Art = A1;
     }
     public float calcPrecio(){
-     return(0.81*Art.getprecio*cantidad*0.81);   
+     return((float)0.81*Art.getPrecio()*(float)cantidad);   
     }
     
     public float calcPrecioSinIVA(){
-        return(Art.getprecio);
+        return(Art.getPrecio());
     }
     
     public float calcIVA(){
-        return(Art.getprecio*0.81*cantidad);
+        return (cantidad*Art.getPrecio()*(float)0.19);
     }
     
     public float calcPeso(){
-        return(Art.getPeso*cantidad);
+        return(Art.getPeso()*cantidad);
     }
     
     public int getCantidad(){
-        return(this.cantidad);
+        return(cantidad);
     }
-    public int getArticulo(){
-        return(this.Art);
+    public Articulo getArticulo(){
+        return(Art);
+    }
+    public void setArticulo(Articulo artic){
+        this.Art = artic;
+    }
+    public void setCantidad(int Can){
+        cantidad = Can;
+    }
+    public String toString(){
+        String desc = null;
+        desc = "Numero de articulos: " + Float.toString(cantidad)+ "\n"+ Art.toString();
+        return(desc);
     }
 }

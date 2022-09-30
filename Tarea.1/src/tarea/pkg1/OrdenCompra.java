@@ -16,10 +16,10 @@ public class OrdenCompra {
     public OrdenCompra(Date ftoday, String state ){
         fecha = ftoday;
         estado = state;
-        this.varl = new ArrayList<DetalleOrden>();
+        this.varl = new ArrayList<>();
     }
-    public void addOrden(DetalleOrden dOrden){
-       varl.add(Dorden);
+    public void addOrden(DetalleOrden Or){
+       varl.add(Or);
    }
     public float calcPrecioSinIVA(){
        float precio=0;
@@ -59,5 +59,18 @@ public class OrdenCompra {
            peso = aux.calcPeso() + peso;
        } 
       return(peso); 
+     }
+     
+     public Date getDate(){
+         return(fecha);
+     }
+     public String getEstado(){
+         return(estado);
+     }
+     public void setDate(Date fe){
+         fecha = fe;
+     }
+     public void setEstado(String sta){
+         estado = sta;
      }
 }

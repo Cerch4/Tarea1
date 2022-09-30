@@ -19,5 +19,37 @@ public class Articulo {
         descripcion = desc;
         precio = pre;
     }
+    public float getPeso(){
+        return(peso);
+    }
+    public float getPrecio(){
+        return(precio);
+    }
+    public String getNombre(){
+        return(nombre);
+    }
+    public String getDescripcion(){
+        return(descripcion);
+    }
+    
+    public void setPeso(int k){
+        peso = k;
+    }
+    public void setNombre(String N){
+        nombre = N;
+    }
+    public void setDescripcion(String D){
+        descripcion = D;
+    }
+    public void setPrecio(int P){
+        precio = P;
+    }
+    
+    @Override
+    public String toString(){
+        String desc = null;
+        desc = "Nombre articulo: "+nombre + "\n"+ "Peso(kg): " +Float.toString(peso) + "\n"+ "Precio: $" + Float.toString(precio) + "\n" + "Descripcion: " + descripcion + "\n";
+        return(desc);
+    }
 }
 
