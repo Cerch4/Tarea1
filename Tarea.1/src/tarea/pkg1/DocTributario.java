@@ -1,18 +1,24 @@
 package tarea.pkg1;
 import java.util.Date;
 public class DocTributario {
-    private Cliente C;
+    private String numero;
+    private String rut;
+    private Direccion direccion;
     private Date fecha;
-    public DocTributario(Cliente c, Date fecha){
-        C = c;
+    public DocTributario(String numero, String rut, Direccion direccion, Date fecha){
+        this.numero = numero;
+        this.rut = rut;
+        this.direccion = direccion;
         this.fecha = fecha;
     }
-    public String getnombre(){return C.getnombre(); }
-    public String getrut(){return C.getrut(); }
+    public String getnumero(){return numero; }
+    public String getrut(){return rut; }
+    public String getdireccion(){return direccion; }
     public Date getfecha(){return fecha; }
-    public void setnombre(String nombre){C.setnombre(nombre);}
-    public void setrut(String rut){C.setrut(rut);}
+    public void setnumero(String numero){this.numero = numero;}
+    public void setrut(String rut){this.rut = rut;}
+    public void setdireccion(String direccion){this.direccion = direccion;}
     public void setfecha(Date fecha){this.fecha = fecha;}
 }
-class Boleta extends DocTributario{public Boleta(Cliente c, Date fecha){super(c, fecha);}}
-class Factura extends DocTributario{public Factura(Cliente c, Date fecha){super(c, fecha);}}
+class Boleta extends DocTributario{public Boleta(String rut, Direccion direccion, Date fecha){super(rut, direccion, fecha);}}
+class Factura extends DocTributario{public Factura(String rut, Direccion direccion, Date fecha){super(rut, direccion, fecha);}}
