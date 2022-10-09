@@ -10,8 +10,11 @@ public class Cliente {
     }
     public String getnombre(){return nombre; }
     public String getrut(){return rut; }
-    public String getdireccion(){return direccion; }
+    public Direccion getdireccion(){return direccion;}
     public void setnombre(String nombre){this.nombre = nombre;}
     public void setrut(String rut){this.rut = rut;}
     public void setdireccion(Direccion direccion){this.direccion = direccion;}
+    public String ClienttoString(){
+        return("Nombre del Cliente: "+nombre+"\nRut del Cliente: "+rut+"Direccion del Cliente: "+direccion.getdireccion());
+    }
 }

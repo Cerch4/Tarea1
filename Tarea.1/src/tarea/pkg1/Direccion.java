@@ -6,4 +6,5 @@ public class Direccion {
     }
     public String getdireccion(){return direccion; }
     public void setdireccion(String direccion){this.direccion = direccion;}
+    public String direcciontoString(){return("La direccion es:" + direccion);}
 }
