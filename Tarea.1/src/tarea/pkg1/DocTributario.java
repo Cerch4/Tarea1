@@ -19,21 +19,22 @@ public abstract class DocTributario {
     public void setrut(String rut){this.rut = rut;}
     public void setdireccion(Direccion direccion){this.direccion = direccion;}
     public void setfecha(Date fecha){this.fecha = fecha;}
-    abstract String DocTributariotoString();
+    @Override
+    public abstract String toString();
 }
 class Boleta extends DocTributario{
     public Boleta(String numero, String rut, Direccion direccion, Date fecha){
         super(numero, rut, direccion, fecha);
     }
-    String DocTributariotoString(){
-        return("Tipo de Documento Tributario: Boleta" + "\nNumero Documento: " + super.getnumero() + "\nRut: " + super.getrut() + "\n" + super.getdireccion().direcciontoString() + "Fecha: " + super.getfecha().toString());
+    public String toString(){
+        return("Tipo de Documento Tributario: Boleta" + "\nNumero Documento: " + super.getnumero() + "\nRut: " + super.getrut() + "\n" + super.getdireccion().toString() + "Fecha: " + super.getfecha().toString());
     }
 }
 class Factura extends DocTributario{
     public Factura(String numero, String rut, Direccion direccion, Date fecha){
         super(numero, rut, direccion, fecha);
     }
-    String DocTributariotoString(){
-        return("Tipo de Documento Tributario: Factura" + "\nNumero Documento: " + super.getnumero() + "\nRut: " + super.getrut() + "\n" + super.getdireccion().direcciontoString() + "Fecha: " + super.getfecha().toString());
+    public String toString(){
+        return("Tipo de Documento Tributario: Factura" + "\nNumero Documento: " + super.getnumero() + "\nRut: " + super.getrut() + "\n" + super.getdireccion().toString() + "Fecha: " + super.getfecha().toString());
     }
 }
