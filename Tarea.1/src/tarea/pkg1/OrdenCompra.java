@@ -14,14 +14,14 @@ public class OrdenCompra {
     private ArrayList<DetalleOrden> varl;
     private ArrayList<Pago> var2;
     private String estado = "Pago pendiente";
-    private DocTributario docT;
     private Cliente client;
-    public OrdenCompra(Date ftoday, String state, Cliente C1 ){
+    private Direccion Dir;
+    public OrdenCompra(Date ftoday, Cliente C1, Direccion Adress ){
         fecha = ftoday;
-        estado = state;
         client = C1;
         this.varl = new ArrayList<>();
         this.var2 = new ArrayList<>();
+        Dir = Adress;
     }
     public void addOrden(DetalleOrden Or){
        varl.add(Or);
@@ -29,9 +29,9 @@ public class OrdenCompra {
     public void addPago(Pago pag){
        var2.add(pag);
    }
-   public void setDocTributario(DocTributario dog){
+   /*public void setDocTributario(DocTributario dog){
        docT = dog;
-   }
+   }*/
    public void setCliente(Cliente exC){
        client = exC;
    }
@@ -65,12 +65,12 @@ public class OrdenCompra {
        } 
       return(precio); 
     }
-    public void checkState(){
+    public void UpdateState(){
        float pagoactual = 0;
        Pago auxPago = null;
        for(int i = 0; i < varl.size(); i = i +1){
            auxPago = var2.get(i);
-           pagoactual = pagoactual+auxPago.getMonto;
+           pagoactual = pagoactual+auxPago.getmonto();
        } 
        if(pagoactual == this.calcPrecio()){
            estado = "Pagado emitido";
@@ -92,18 +92,16 @@ public class OrdenCompra {
      public Date getDate(){
          return(fecha);
      }
-     public String getEstado(){
-         return(estado);
-     }
      public void setDate(Date fe){
          fecha = fe;
      }
      public void setEstado(String sta){
          estado = sta;
      }
+    @Override
      public String toString(){
          String tos = null;
-         tos = "Fecha: " + fecha.toString() + "Estado: " + estado + "Cliente: "+ "\n"+ client.toString();
+         tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString();
          DetalleOrden aux = null;
          for(int i = 0; i < varl.size(); i = i +1){
            aux = varl.get(i);

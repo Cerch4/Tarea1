@@ -16,6 +16,6 @@ public class Cliente {
     public void setdireccion(Direccion direccion){this.direccion = direccion;}
     @Override
     public String toString(){
-        return("Nombre del Cliente: "+nombre+"\nRut del Cliente: "+rut+"Direccion del Cliente: "+direccion.getdireccion());
+        return("Nombre del Cliente: "+nombre+"\n Rut del Cliente: "+rut+"Direccion del Cliente: "+direccion.getdireccion());
     }
 }

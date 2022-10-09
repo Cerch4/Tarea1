@@ -43,6 +43,7 @@ public class DetalleOrden{
     public void setCantidad(int Can){
         cantidad = Can;
     }
+    @Override
     public String toString(){
         String desc = null;
         desc = "Numero de articulos: " + Float.toString(cantidad)+ "\n"+ Art.toString();
