@@ -11,7 +11,8 @@ public class Tarjeta extends Pago{
     public String getnumTransaccion(){return numTransaccion;}
     public void setipo(String tipo){this.tipo=tipo;}
     public void setnumTransaccion(String numTransaccion){this.numTransaccion=numTransaccion;}
-    String PagotoString(){
+    @Override
+    public String toString(){
         return ("Monto pagado: " + super.getmonto() + "\nFecha del pago: " + super.getfecha().toString() + "\n Tipo de tarjeta: " + tipo + "\n Numero de Transaccion: " + numTransaccion);
     }
 }

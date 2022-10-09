@@ -6,7 +6,8 @@ public class Efectivo extends Pago {
     public float calcDevolucion(int pago){
         return super.getmonto()-pago;
     }
-    String PagotoString(){
+    @Override
+    public String toString(){
         return ("Monto pagado: " + super.getmonto() + "\nFecha del pago: " + super.getfecha().toString());
     }
 }

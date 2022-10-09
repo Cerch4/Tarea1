@@ -11,7 +11,8 @@ public class Transferencia extends Pago{
     public String getnumCuenta(){return numCuenta;}
     public void setbanco(String banco){this.banco=banco;}
     public void setnumCuenta(String numCuenta){this.numCuenta=numCuenta;}
-    String PagotoString(){
+    @Override
+    public String toString(){
         return ("Monto pagado: " + super.getmonto() + "\nFecha del pago: " + super.getfecha().toString() + "\nBanco: " + banco + "\nNumero de cuenta: " + numCuenta);
     }
 }
