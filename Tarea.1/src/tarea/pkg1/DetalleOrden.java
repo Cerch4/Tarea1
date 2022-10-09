@@ -16,11 +16,11 @@ public class DetalleOrden{
         Art = A1;
     }
     public float calcPrecio(){
-     return((float)0.81*Art.getPrecio()*(float)cantidad);   
+     return((float)1.19*Art.getPrecio()*(float)cantidad);   
     }
     
     public float calcPrecioSinIVA(){
-        return(Art.getPrecio());
+        return(Art.getPrecio()*19);
     }
     
     public float calcIVA(){

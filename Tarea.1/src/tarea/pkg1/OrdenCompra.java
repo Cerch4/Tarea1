@@ -13,7 +13,7 @@ public class OrdenCompra {
     private Date fecha;
     private ArrayList<DetalleOrden> varl;
     private ArrayList<Pago> var2;
-    private String estado = "Pendiente";
+    private String estado = "Pago pendiente";
     private DocTributario docT;
     private Cliente client;
     public OrdenCompra(Date ftoday, String state, Cliente C1 ){
@@ -73,7 +73,7 @@ public class OrdenCompra {
            pagoactual = pagoactual+auxPago.getMonto;
        } 
        if(pagoactual == this.calcPrecio()){
-           estado = "Pagado";
+           estado = "Pagado emitido";
        }
    }
     public String getEstado(){
