@@ -46,7 +46,7 @@ public class Tarea1 {
         
         AlienOrden2.addOrden(OrdenTest3);
         
-        Efectivo TestPago= new Efectivo(15000, Today);
+        Efectivo TestPago= new Efectivo(1500000, Today);
         Transferencia pagoTransferencia = new Transferencia("Banco BCO","000000001",JoeOrden.calcPrecio(), Today);
         Tarjeta pagoTarjeta = new Tarjeta("Credito","102397541", AlienOrden2.calcPrecio()/2, Today );
         Efectivo pagoEfectivo = new Efectivo(28045, Today);
@@ -73,8 +73,8 @@ public class Tarea1 {
         String teString3 = JoeOrden.toString();
         
         System.out.print(teString1+ "\n\n");
-        System.out.print(teString1+ "\n\n");
-        System.out.print(teString1+ "\n\n");
+        System.out.print(teString2+ "\n\n");
+        System.out.print(teString3+ "\n\n");
         
     }
     
