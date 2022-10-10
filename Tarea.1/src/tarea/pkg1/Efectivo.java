@@ -7,7 +7,8 @@ public class Efectivo extends Pago {
     public Efectivo(float monto, Date fech4){
         super(monto, fech4);
     }
-    public float calcDevolucion(int pago){
+    
+    public float calcDevolucion(float pago){
         return super.getmonto()-pago;
     }
     @Override

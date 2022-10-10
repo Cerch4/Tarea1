@@ -35,14 +35,34 @@ public class OrdenCompra {
        var2.add(pag);
        float pagoactual = 0;
        Pago auxPago = null;
-       for(int i = 0; i < varl.size(); i = i +1){
+       for(int i = 0; i < var2.size(); i = i +1){
            auxPago = var2.get(i);
            pagoactual = pagoactual+auxPago.getmonto();
        } 
-       if(pagoactual == this.calcPrecio()){
+       if(pagoactual >= this.calcPrecio()){
            estado = "Pagado emitido";
        }
    }
+    
+    public float DevolucionEfectivo(){
+       float pagoactual = 0;
+       Pago auxPago = null;
+       int flag = -1;
+       for(int i = 0; i < var2.size(); i = i +1){
+           auxPago = var2.get(i);
+           pagoactual = pagoactual + auxPago.getmonto();
+           if ("Efectivo".equals(auxPago.getClass().getSimpleName())){
+               flag = i;
+           }
+       }
+       if((flag != -1) && (pagoactual > this.calcPrecio())){
+           Efectivo auxPago2 = new Efectivo(var2.get(flag).getmonto(), var2.get(flag).getfecha());
+           return(auxPago2.calcDevolucion(this.calcPrecio()));
+     }
+       else {
+           return((float)0);
+       }               
+    }
 
    public void setDocTributario(DocTributario dog){
        Doc = dog;
@@ -137,6 +157,7 @@ public class OrdenCompra {
            aux = varl.get(i);
            tos = tos + aux.toString();
        } 
+         tos = tos + "\nDevolucion:" + this.DevolucionEfectivo();
          return(tos);
      }
 }

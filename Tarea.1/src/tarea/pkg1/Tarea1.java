@@ -20,13 +20,12 @@ public class Tarea1 {
         Articulo arTest4 = new Articulo((float)1, "Super8", "Dulce de chocolate con sabor a chocolate", 800);
         Articulo arTest5 = new Articulo((float)9, "Alimento para perros SabroKan", "Dale a tu mejor amigo lo mejor, dale SabroKan", 10500);
         
-  
         
         Date Today = new Date(2077, 9, 19);
         
         DetalleOrden OrdenTest = new DetalleOrden(7, arTest);
         DetalleOrden OrdenTest2 = new DetalleOrden(2, arTest2);
-        DetalleOrden OrdenTest3 = new DetalleOrden(6, arTest3);
+        DetalleOrden OrdenTest3 = new DetalleOrden(26, arTest3);
         DetalleOrden OrdenTest4 = new DetalleOrden(10, arTest4);
         DetalleOrden OrdenTest5 = new DetalleOrden(2, arTest5);
         
@@ -44,15 +43,39 @@ public class Tarea1 {
         
         AlienOrden.addOrden(OrdenTest4);
         AlienOrden.addOrden(OrdenTest5);
+        
         AlienOrden2.addOrden(OrdenTest3);
         
+        Efectivo TestPago= new Efectivo(15000, Today);
+        Transferencia pagoTransferencia = new Transferencia("Banco BCO","000000001",JoeOrden.calcPrecio(), Today);
+        Tarjeta pagoTarjeta = new Tarjeta("Credito","102397541", AlienOrden2.calcPrecio()/2, Today );
+        Efectivo pagoEfectivo = new Efectivo(28045, Today);
+        
         Boleta Boleta1 = new Boleta("234123", clienTest.getrut(), clienTest.getdireccion(), Today);
-        AlienOrden.setDocTributario(Boleta1);
-        AlienOrden2.setDocTributario(Boleta1);
-
+        Factura Factura1 = new Factura("123", clienTest2.getrut(), clienTest2.getdireccion(), Today);
+        Boleta Boleta2 = new Boleta("124", clienTest2.getrut(), clienTest2.getdireccion(), Today);
+        
+        JoeOrden.setDocTributario(Boleta1);
+        AlienOrden2.setDocTributario(Factura1);
+        AlienOrden.setDocTributario(Boleta2);
+        
+        AlienOrden.addPago(TestPago);
+        JoeOrden.addPago(pagoTarjeta);
+        AlienOrden2.addPago(pagoTransferencia);
+        AlienOrden2.addPago(pagoEfectivo);
+        
+        float devolucion = AlienOrden.DevolucionEfectivo();
+        float devolucion2 = AlienOrden2.DevolucionEfectivo();
+        
         
         String teString1 = AlienOrden.toString();
-        System.out.print(teString1);
+        String teString2 = AlienOrden2.toString();
+        String teString3 = JoeOrden.toString();
+        
+        System.out.print(teString1+ "\n\n");
+        System.out.print(teString1+ "\n\n");
+        System.out.print(teString1+ "\n\n");
+        
     }
     
 }
