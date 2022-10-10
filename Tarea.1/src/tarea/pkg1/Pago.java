@@ -3,9 +3,9 @@ import java.util.Date;
 public abstract class Pago {
     private float monto;
     private Date fecha;
-    public Pago(float monto, int year, int month, int day){
+    public Pago(float monto, Date fecha){
         this.monto = monto;
-        fecha = new Date(year,month,day);
+        this.fecha = fecha;
     }
     public void setmonto(float monto){this.monto = monto;}
     public float getmonto(){return monto;}    

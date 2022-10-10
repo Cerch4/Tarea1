@@ -1,9 +1,12 @@
 package tarea.pkg1;
+
+import java.util.Date;
+
 public class Tarjeta extends Pago{
     private String tipo;
     private String numTransaccion;
-    public Tarjeta(String tipo, String numTransaccion, float monto, int year, int month, int day){
-        super(monto, year, month, day);
+    public Tarjeta(String tipo, String numTransaccion, float monto, Date fech4){
+        super(monto, fech4);
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }

@@ -1,9 +1,12 @@
 package tarea.pkg1;
+
+import java.util.Date;
+
 public class Transferencia extends Pago{
     private String banco;
     private String numCuenta;
-    public Transferencia(String banco, String numCuenta, float monto, int year, int month, int day){
-        super(monto, year, month, day);
+    public Transferencia(String banco, String numCuenta, float monto, Date fech4){
+        super(monto, fech4);
         this.banco = banco;
         this.numCuenta = numCuenta;
     }

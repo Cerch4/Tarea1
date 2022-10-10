@@ -37,11 +37,10 @@ public class Tarea1 {
         
         OrdenCompra JoeOrden = new OrdenCompra(Today, clienTest, clienTest.getdireccion());
         OrdenCompra AlienOrden = new OrdenCompra(Today, clienTest2, clienTest2.getdireccion());
-         OrdenCompra AlienOrden2 = new OrdenCompra(Today, clienTest2, clienTest2.getdireccion());
+        OrdenCompra AlienOrden2 = new OrdenCompra(Today, clienTest2, clienTest2.getdireccion());
+        
         JoeOrden.addOrden(OrdenTest);
         JoeOrden.addOrden(OrdenTest2);
-        
-       
         
         AlienOrden.addOrden(OrdenTest4);
         AlienOrden.addOrden(OrdenTest5);
@@ -49,11 +48,11 @@ public class Tarea1 {
         
         Boleta Boleta1 = new Boleta("234123", clienTest.getrut(), clienTest.getdireccion(), Today);
         AlienOrden.setDocTributario(Boleta1);
-        
+        AlienOrden2.setDocTributario(Boleta1);
+
         
         String teString1 = AlienOrden.toString();
         System.out.print(teString1);
-        System.out.print(Today.toString());
     }
     
 }

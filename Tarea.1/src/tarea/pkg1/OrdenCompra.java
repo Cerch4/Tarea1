@@ -33,11 +33,40 @@ public class OrdenCompra {
     
     public void addPago(Pago pag){
        var2.add(pag);
+       float pagoactual = 0;
+       Pago auxPago = null;
+       for(int i = 0; i < varl.size(); i = i +1){
+           auxPago = var2.get(i);
+           pagoactual = pagoactual+auxPago.getmonto();
+       } 
+       if(pagoactual == this.calcPrecio()){
+           estado = "Pagado emitido";
+       }
    }
 
    public void setDocTributario(DocTributario dog){
        Doc = dog;
    }
+   
+   public void setCliente(Cliente exC){
+       client = exC;
+   }
+   
+   public void setDate(Date fe){
+         fecha = fe;
+     }
+   public void setEstado(String sta){
+         estado = sta;
+     }
+   
+   public String getEstado(){
+        return(estado);
+    }
+   
+   public Date getDate(){
+         return(fecha);
+     }
+   
    
    public DocTributario getDocTributario(){
       if(Doc != null){
@@ -48,9 +77,9 @@ public class OrdenCompra {
       }
    }
    
-   public void setCliente(Cliente exC){
-       client = exC;
-   }
+   
+   
+ 
    
     public float calcPrecioSinIVA(){
        float precio=0;
@@ -81,20 +110,7 @@ public class OrdenCompra {
        } 
       return(precio); 
     }
-    public void UpdateState(){
-       float pagoactual = 0;
-       Pago auxPago = null;
-       for(int i = 0; i < varl.size(); i = i +1){
-           auxPago = var2.get(i);
-           pagoactual = pagoactual+auxPago.getmonto();
-       } 
-       if(pagoactual == this.calcPrecio()){
-           estado = "Pagado emitido";
-       }
-   }
-    public String getEstado(){
-        return(estado);
-    }
+
      public float calcPeso(){
          float peso=0;
        DetalleOrden aux = null;
@@ -105,23 +121,15 @@ public class OrdenCompra {
       return(peso); 
      }
      
-     public Date getDate(){
-         return(fecha);
-     }
-     public void setDate(Date fe){
-         fecha = fe;
-     }
-     public void setEstado(String sta){
-         estado = sta;
-     }
+
     @Override
      public String toString(){
          String tos = null;
          if(Doc != null){
-         tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString()+ "\n" + Doc.toString() + "\n";     
+         tos = "Fecha: " + fecha.toString() + "\n" + "Estado: " + estado +  "\nDatos de cliente: \n"+ client.toString()+ "\nDocumento Tributario:\n" + Doc.toString() + "\nDatos Productos:\n" ;     
          }
          else {
-          tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString()+ "\n" ;
+          tos = "Fecha: " + fecha.toString() + "\n" + "Estado: " + estado +  "\nDatos de cliente: \n"+ client.toString() + "\nDatos Productos:\n" ;     
          }
         
          DetalleOrden aux = null;
