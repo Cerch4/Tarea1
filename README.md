@@ -1,2 +1,4 @@
-# Tarea1
-T a r e a  u n o
+# Tarea1 Programacion II
+Integrantes: Sebastian Ignacio Garcia Pendola
+             Cesar Andres Franco Mindiola
+             
