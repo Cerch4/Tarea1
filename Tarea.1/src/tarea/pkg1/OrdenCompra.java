@@ -51,7 +51,7 @@ public class OrdenCompra {
        for(int i = 0; i < var2.size(); i = i +1){
            auxPago = var2.get(i);
            pagoactual = pagoactual + auxPago.getmonto();
-           if ("Efectivo".equals(auxPago.getClass().getSimpleName())){
+           if ("Efectivo".equals(auxPago.getClass().getSimpleName())){ //getClass().getSimpleName() sirve para obtener el nombre de la clase
                flag = i;
            }
        }
