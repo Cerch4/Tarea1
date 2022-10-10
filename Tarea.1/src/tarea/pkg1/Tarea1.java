@@ -33,7 +33,7 @@ public class Tarea1 {
         Direccion Dirtest1 = new Direccion("Casa blanca, Washintong D.C");
         
         Cliente clienTest = new Cliente("Joe Biden", "00000000-1", Dirtest1);
-        Cliente clienTest2 = new Cliente("Tutankamón", "66666666-9", Dirtest1);
+        Cliente clienTest2 = new Cliente("Tutankamon", "66666666-9", Dirtest1);
         
         OrdenCompra JoeOrden = new OrdenCompra(Today, clienTest, clienTest.getdireccion());
         OrdenCompra AlienOrden = new OrdenCompra(Today, clienTest2, clienTest2.getdireccion());
@@ -41,9 +41,15 @@ public class Tarea1 {
         JoeOrden.addOrden(OrdenTest);
         JoeOrden.addOrden(OrdenTest2);
         
+       
+        
         AlienOrden.addOrden(OrdenTest4);
         AlienOrden.addOrden(OrdenTest5);
         AlienOrden2.addOrden(OrdenTest3);
+        
+        Boleta Boleta1 = new Boleta("234123", clienTest.getrut(), clienTest.getdireccion(), Today);
+        AlienOrden.setDocTributario(Boleta1);
+        
         
         String teString1 = AlienOrden.toString();
         System.out.print(teString1);

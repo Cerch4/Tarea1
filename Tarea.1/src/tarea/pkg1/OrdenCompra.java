@@ -14,8 +14,11 @@ public class OrdenCompra {
     private ArrayList<DetalleOrden> varl;
     private ArrayList<Pago> var2;
     private String estado = "Pago pendiente";
+    private DocTributario Doc; 
     private Cliente client;
     private Direccion Dir;
+    
+    
     public OrdenCompra(Date ftoday, Cliente C1, Direccion Adress ){
         fecha = ftoday;
         client = C1;
@@ -23,15 +26,28 @@ public class OrdenCompra {
         this.var2 = new ArrayList<>();
         Dir = Adress;
     }
+    
     public void addOrden(DetalleOrden Or){
        varl.add(Or);
    }
+    
     public void addPago(Pago pag){
        var2.add(pag);
    }
-   /*public void setDocTributario(DocTributario dog){
-       docT = dog;
-   }*/
+
+   public void setDocTributario(DocTributario dog){
+       Doc = dog;
+   }
+   
+   public DocTributario getDocTributario(){
+      if(Doc != null){
+           return(Doc);
+      }
+      else {
+          return null;
+      }
+   }
+   
    public void setCliente(Cliente exC){
        client = exC;
    }
@@ -101,7 +117,13 @@ public class OrdenCompra {
     @Override
      public String toString(){
          String tos = null;
-         tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString();
+         if(Doc != null){
+         tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString()+ "\n" + Doc.toString() + "\n";     
+         }
+         else {
+          tos = "Fecha: " + fecha.toString() + "Estado: " + estado +  "\n"+ client.toString()+ "\n" ;
+         }
+        
          DetalleOrden aux = null;
          for(int i = 0; i < varl.size(); i = i +1){
            aux = varl.get(i);
